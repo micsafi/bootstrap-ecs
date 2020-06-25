@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  ECSCluster:
+    Type: "AWS::ECS::Cluster"
+    Properties:
+      ClusterName: test-cluster
+      ClusterSettings:
+        - Name: containerInsights
+          Value: enabled
+      Tags:
+        - Key: Environment
+          Value: test
+        - Key: CreatedBy
+          Value: CloudFormation
+        - Key: ScriptedBy
+          Value: "Mikko J. Mäkelä"
